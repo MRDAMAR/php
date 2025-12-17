@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизація</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div id="login-page">
+        <nav>
+            <ul>
+                <li><a href="/">Головна</a></li>
+                <li><a href="/login">Логін</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="login-form">
+                <h2>Авторизація</h2>
+                <label for="email">Пошта</label>
+                <input type="email" id="email" placeholder="Введіть пошту" required>
+
+                <label for="password">Пароль</label>
+                <input type="password" id="password" placeholder="Пароль">
+
+                <button class="sign-in-btn" onclick="login()">Увійти</button>
+                <p id="login-error"></p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById("email").value;
+            if (email.trim() !== "") {
+                // Перехід на головну через PHP‑роутер
+                window.location.href = "/";
+            } else {
+                document.getElementById("login-error").innerText = "Введіть пошту!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
